@@ -37,7 +37,7 @@ func setupRoutes() {
 	// http.HandleFunc("/ws", serveWs)
 }
 func main() {
-	fmt.Println("Distributed Chat App v0.01")
+	fmt.Println("Distributed Chat-App v0.01")
 	setupRoutes()
 	http.ListenAndServe(":8081", nil)
 }
