@@ -2,8 +2,8 @@
 
 var socket = new WebSocket("ws://localhost:8081/ws");
 
-let connect  = () => {
-    console.log("Attempting connection...");
+let connect  = cb  => {
+    console.log("connecting");
 
     socket.onopen = () => {
         console.log("successfully connected");
@@ -11,6 +11,7 @@ let connect  = () => {
 
     socket.onmessage = msg => {
         console.log(msg);
+        cb(msg);
     };
 
     socket.onclose = event => {
